@@ -17,6 +17,8 @@ permalink: /java/intro
 이러한 배경에서 자바는 수많은 API, 인프라, 웹프로그래밍 시장에서 차지하느 비율 등등 의 이점을 가져가면 현시점 가장 많이 쓰이는 언어중 하나가 되었다.<br>
 </div>
 
+---
+
 ## 자바언어의 특징
 <div class="code-example" markdown="1">
 1. 운영체제의 독립적이다.<br>
@@ -32,6 +34,7 @@ permalink: /java/intro
  > 하나의 코드를 바꿀경우 전체 프로그램을 컴파일 하지 않아도 된다는 장점이 있다. <br>
 수정된 코드의 클래스 컴파일만 잘해준다면 전체 프로그램을 컴파일 필요가 없다.<br>
 </div>
+---
 
 ## 자바를 사용해야 할까?
 <div class="code-example" markdown="1">
