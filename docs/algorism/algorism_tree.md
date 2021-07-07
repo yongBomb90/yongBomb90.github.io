@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 트리구조? 구현?
+title: 트리구조?
 parent: 알고리즘
 nav_order: 3
 permalink: /algorism/intro
