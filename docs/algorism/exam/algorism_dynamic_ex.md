@@ -1,14 +1,12 @@
 ---
 layout: default
-title: 동적계획법 - 땅따먹기
-parent: 알고리즘
-nav_order: 22
-permalink: /algorism/ex/dp/1
----
-## 동적계획법?
-{: .fs-9 }
-입력의 크기가 작은 문제들을 해결한후, 부분문제들의 해를 활용하여 보다 큰 문제를 해결한다. 이는 상향식 접근법으로 가장 최하위의 해답을 구한후 이를 저장하여 상위문제를 풀어가는 방식이라고 할수있다.
-
+title: 땅따먹기 - 동적계획법
+nav_order: 1
+description: "algorism"
+parent: 예제
+grand_parent: 알고리즘
+permalink: /algorism/exam/dp/1
+has_children: true
 ---
 
 ## [프로그래머스 땅따먹기](https://programmers.co.kr/learn/courses/30/lessons/12913)
