@@ -1,7 +1,7 @@
 ---
 layout: default
 title: spring
-nav_order: 999
+nav_order: 998
 parent: 백엔드
 permalink: /backend/spring
 has_children: true
