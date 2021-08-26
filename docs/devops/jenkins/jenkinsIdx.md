@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 젠킨스
-parent: 개발환경
+parent: 네트워크 및 개발환경
 nav_order: 1
 permalink: /devops/jenkins
 ---
