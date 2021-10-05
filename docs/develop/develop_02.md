@@ -5,6 +5,9 @@ parent: 개발참조
 nav_order: 0
 permalink: /develop/00
 ---
+# SQL 처리시 유용한 쿼리 문법 모음
+
+---
 
 ### 메일 유효성 검증
 
@@ -21,3 +24,5 @@ FROM (
 ;
 식
 ```
+
+---
