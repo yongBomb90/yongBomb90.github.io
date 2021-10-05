@@ -10,12 +10,6 @@ permalink: /
 {: .fs-9 }
 
 ---
-<div class="code-example" markdown="1">
-<dl>
-    <dd>
-        습관이 노력이다.
-    </dd>
-</dl>
-</div>
+ ## 습관이 노력이다.
 
 
