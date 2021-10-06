@@ -29,7 +29,7 @@ FROM (
 
 ### MySQL Partition by 구현
 
-```
+```sql
 -- FIELD 를 통해 파티션을 나누고 다음 우선순위로 처리 이떄 주의 점은 모든 경우의 수 처리 해야함
 SELECT *
 FROM   (
