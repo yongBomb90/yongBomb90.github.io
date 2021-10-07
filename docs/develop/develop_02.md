@@ -41,3 +41,17 @@ FROM   (
 ORDER BY FIELD(CD , 'Q', 'W' ,'E', 'R' ) ASC
 
 ```
+
+---
+
+### MySQL ROW TO JSON
+
+```sql
+-- 컬럼을 JSON으로 조회 한다 -> 에러 터지거나 외부 API 대량 파라미터 생성시 유용
+SELECT JSON_OBJECT('seq',seq)
+FROM   (SELECT 234 AS SEQ) TRG;
+-- '{"seq": 234}'
+
+```
+
+
