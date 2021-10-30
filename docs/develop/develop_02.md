@@ -54,4 +54,53 @@ FROM   (SELECT 234 AS SEQ) TRG;
 
 ```
 
+---
+
+### MySQL Conneted By
+
+```sql
+/******************************************
+1 |'2021-08-18'|'수','1'
+2 |'2021-08-19'|'목','2'
+3 |'2021-08-20'|'금','3'
+4 |'2021-08-21'|'토','3' -- 주말로 인한 워킹데이 추가 X
+5 |'2021-08-22'|'일','3' -- 주말로 인한 워킹데이 추가 X
+6 |'2021-08-23'|'월','4'
+7 |'2021-08-24'|'화','5'
+8 |'2021-08-25'|'수','6'
+9 |'2021-08-26'|'목','7'
+10|'2021-08-27'|'금','8'
+******************************************/
+SET @YYYMMDD = '2021-10-28' , @WRKDAY = 8 ;
+SELECT MAX(TRG.START_DATE) AS START_DATE, -- 워킹데이 처리 기준일자 
+	   MAX(TRG.DT) AS END_DATE, -- 워킹데이 마지막일자 
+       MAX(TRG.CNT) AS CNT -- 워킹데이수
+FROM   (
+		WITH RECURSIVE A 
+			AS ( 
+				SELECT  STR_TO_DATE(@YYYMMDD,'%Y-%m-%d') AS START_DATE  
+					 ,  STR_TO_DATE(@YYYMMDD,'%Y-%m-%d') AS DT  
+					 ,  1 AS LEVEL  
+					 ,  1 AS CNT  
+					 ,  DATE_FORMAT( STR_TO_DATE(@YYYMMDD,'%Y-%m-%d'),'%w') AS DD 
+				UNION ALL 
+				SELECT  A.START_DATE AS START_DATE  
+					 ,  DATE_ADD( A.START_DATE , INTERVAL  A.LEVEL DAY ) AS DT  
+					 ,  1+A.LEVEL 
+					 ,  IF ( DATE_FORMAT( DATE_ADD(A.START_DATE , INTERVAL  A.LEVEL DAY ),'%w') IN ( 6, 0 ) , A.CNT , 1+A.CNT ) AS CNT 
+					 ,  DATE_FORMAT( DATE_ADD(A.START_DATE , INTERVAL  A.LEVEL DAY ),'%w') AS DD 
+				FROM A 
+				WHERE A.CNT < @WRKDAY 
+		 ) SELECT START_DATE , LEVEL , DT , DD , CNT FROM A
+       ) AS TRG
+;
+```
+
+---
+
+
+
+
+
+
 
