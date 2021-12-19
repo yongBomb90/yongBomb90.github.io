@@ -40,6 +40,25 @@ FROM   (
        ) A
 ORDER BY FIELD(CD , 'Q', 'W' ,'E', 'R' ) ASC
 
+
+-- 실제 파티션 바이 처리 ....
+SELECT A.*
+       , ROW_NUMBER() OVER (PARTITION BY A.CD , A.SEQ ORDER BY A.ORD ASC ) AS rn
+				
+FROM   (
+		SELECT 'R' AS CD , 0 AS SEQ  , 0 AS ORD
+		UNION ALL  SELECT 'E' AS CD , 1 AS SEQ , 3 AS ORD
+		UNION ALL SELECT 'W' AS CD , 2 AS SEQ , 2 AS ORD
+		UNION ALL SELECT 'Q' AS CD , 3 AS SEQ , 1 AS ORD
+        UNION ALL  SELECT 'E' AS CD , 1 AS SEQ , 1 AS ORD
+		UNION ALL  SELECT 'E' AS CD , 1 AS SEQ , 2 AS ORD
+		UNION ALL SELECT 'Q' AS CD , 3 AS SEQ , 2 AS ORD
+        UNION ALL SELECT 'Q' AS CD , 3 AS SEQ , 3 AS ORD
+        
+       ) A
+;
+
+
 ```
 
 ---
